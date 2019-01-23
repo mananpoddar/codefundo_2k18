@@ -1,0 +1,124 @@
+
+{% block main_content %}
+{% load staticfiles %}   
+<!DOCTYPE html>
+<html lang="en">
+ 
+<body style="background-image:url({% static 'codefundo/water1.jpg' %}); background-repeat: no-repeat">
+      
+    <head>
+            <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            
+            li {
+                float: left;
+            }
+            
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            li a:hover {
+                background-color: #111;
+            }
+            .fund
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	height: 600px;
+	padding: 50px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+            </style>
+            </head>
+            <body>
+            
+            <ul>
+              <li><a class="active" href="/codefundo/main_page">Home</a></li>
+              <li><a href="#news"></a></li>
+              <li><a href="/codefundo/admin_login">Admin Portal</a></li>
+              <li><a href="/codefundo/aboutus">About Us</a></li>
+              <li><a href="/codefundo/main_page">Log Out</a></li>
+            </ul>
+            
+        
+
+<div class="container">
+    <div class="fund">
+            <form  action="/codefundo/afterlogsign/" method="POST">
+          
+                {% csrf_token %}
+       {{ form.non_field_errors }}
+
+
+       <h1 style=" text-align: center"><strong style="color:aliceblue">Submit Your Contributions Here</strong> </h1><br>
+
+           <strong>Funds :</strong> <br> {{form.fund}}<br><br>
+
+
+<form class="form-horizontal" action="{% url "codefundo:user_login" %}" method="POST">
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="card number"><strong>Enter Atm Card Number:</strong></label>
+        <br>
+        <div class="col-sm-10">
+     <input type="text" class="form-control" name="card" placeholder="Enter Card Number" >
+        </div>
+    </div>
+  <br>
+    <div class="form-group">
+       <label class="control-label col-sm-2"  for="card name"><strong>Enter Card Holder Name:</strong></label>
+       <br>
+     <div class="col-sm-10">
+       <input class="form-control" type="text" name="name" placeholder="Enter Name">
+   </div>
+    </div>
+<br>
+    <div class="form-group">
+            <label class="control-label col-sm-2"  for="cvv"><strong>Enter CVV:</strong></label>
+            <br>
+          <div class="col-sm-10">
+            <input class="form-control" type="password" name="cvv" placeholder="Enter CVV">
+        </div>
+         </div>
+<br>
+         <div class="form-group">
+                <label class="control-label col-sm-2"  for="date"><strong>Enter Date of Expiry:</strong></label>
+                <br>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" name="date" placeholder="MM/YYYY">
+            </div>
+             </div>
+           <br>
+      
+         total fund till now:{{sum}}
+        
+
+<br>
+                <input class="btn btn-success" type="submit" value="submit">   
+            </form>   
+ 
+    </div>
+   
+ 
+    </div>
+</div>
+
+</body>
+</html>
+   {% endblock %}

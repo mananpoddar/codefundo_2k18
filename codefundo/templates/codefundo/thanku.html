@@ -1,0 +1,62 @@
+{% load staticfiles %}   
+<!DOCTYPE html>
+<html lang="en">
+ 
+<body style="background-image:url({% static 'codefundo/water1.jpg' %}); background-repeat: no-repeat">
+      
+    <head>
+            <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            
+            li {
+                float: left;
+            }
+            
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            li a:hover {
+                background-color: #111;
+            }
+            .fund
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	height: 600px;
+	padding: 50px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+            </style>
+            </head>
+            <body>
+            
+            <ul>
+              <li><a class="active" href="/codefundo/main_page">Home</a></li>
+              <li><a href="#news"></a></li>
+              <li><a href="#contact">Admin Portal</a></li>
+              <li><a href="/codefundo/aboutus">About Us</a></li>
+              <li><a href="/codefundo/main_page">Log Out</a></li>
+            </ul>
+<div style="text-align:center ; margin-top:20em;">
+    <div style="font-size: 2em">
+<h1 style="color:aliceblue">Thank You</h1>
+<h2 style="color:aliceblue">Your Contribution Has Been Successfully Added To Our Fund!</h2>
+</div>
+</div>
+</body>
+</html>

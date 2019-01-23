@@ -1,0 +1,90 @@
+
+{% block main_content %}
+{% load staticfiles %}   
+<!DOCTYPE html>
+<html lang="en">
+ 
+<body style="background-image:url({% static 'codefundo/water1.jpg' %}); background-repeat: no-repeat">
+      
+    <head>
+            <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            
+            li {
+                float: left;
+            }
+            
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            li a:hover {
+                background-color: #111;
+            }
+            .fund
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	height: 200px;
+	padding: 50px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+            </style>
+            </head>
+            <body>
+            
+            <ul>
+              <li><a class="active" href="/codefundo/main_page">Home</a></li>
+              <li><a href="#news"></a></li>
+              <li><a href="#contact">Admin Portal</a></li>
+              <li><a href="/codefundo/aboutus">About Us</a></li>
+              <li><a href="/codefundo/main_page">Log Out</a></li>
+            </ul>
+            
+        
+
+<div class="container">
+    <div class="fund">
+            <form  action="/codefundo/main_log_page/" method="POST">
+          
+                {% csrf_token %}
+       {{ form.non_field_errors }}
+
+
+
+
+           <strong>Funds :</strong> <br> {{form.fund}}<br><br>
+
+           
+           
+      
+         total fund till now:{{sum}}
+        
+
+<br>
+                <input class="btn btn-success" type="submit" value="submit">   
+            </form>   
+ 
+    </div>
+   
+ 
+    </div>
+</div>
+
+</body>
+</html>
+   {% endblock %}

@@ -1,0 +1,151 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Microsoft Codefundoo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #dbdbf0;
+     height: 100%
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>MICROSOFT</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="/codefundo/main_page/">Home</a></li>
+        <li><a href="/codefundo/aboutus/">About Us</a></li>
+        <li><a href="/codefundo/user_signup/">Sign Up</a></li>
+        <li><a href="/codefundo/user_login">Log In</a></li>
+      </ul><br>
+
+      <div class="container">
+        <form  action="/codefundo/main_page/" method="POST">
+      
+            {% csrf_token %}
+   {{ form.non_field_errors }}
+
+        
+       <label for="Aadhar">Aadhar Card:</label>
+         <br> {{form.aadhar_no}}<br><br>
+       
+  
+         <label for="pin">Postal Code</label>
+        <br> {{form.pincode}}
+        <br><br>
+
+        <label for="City">City</label>
+        <br>  {{form.city}}
+        <br>
+
+<br>
+<br>
+            <input class="btn btn-primary" type="submit" value="Submit Response">   
+        </form>  
+<br>
+<br> 
+
+</div>
+   
+    </div>
+
+    <div class="col-sm-9">
+		<body style="background-image:url({% static 'codefundo/water1.jpg' %}); background-repeat: no-repeat">
+      <br><br><br><br><br>
+
+      
+
+      
+
+      <h1 style="text-align: center"><strong style="color:aliceblue">About Creators</strong></h1>
+<br><br><br>
+      <div class="container">
+      <div class="row">
+		  <div class="animated fadeInLeft">
+        <div class="col-sm-2 text-center">
+          <img src='{% static "codefundo/manan.png" %}' class="img-circle" height="200" width="200" alt="Manan">
+        </div>
+        <div class="col-sm-10">
+          <h4><strong>Manan Poddar</strong></h4>
+          <p>Sophomore student of National Institute Of Technology,Karnataka </p>
+          <br>
+		</div>
+		</div>
+	</div>
+		<br>
+		<br>
+		<div class="row">
+		<div class="animated slideInLeft delay-1s">
+        <div class="col-sm-2 text-center">
+          <img src='{% static "codefundo/shashank.jpg" %}' class="img-circle" height="200" width="200" alt="Shashank">
+        </div>
+        <div class="col-sm-10">
+          <h4><strong>Shashank Jaiswal</strong> </h4>
+          <p>Sophomore student of National Institute Of Technology,Karnataka </p>
+		 </div>
+		</div> 
+	</div>
+		  <br>
+		  <br>
+		<div class="row">
+		<div class="animated slideInLeft delay-2s">
+		  <div class="col-sm-2 text-center">
+			<img src='{% static "codefundo/vedant.jpeg" %}' class="img-circle" height="200" width="200" alt="Vedant">
+		  </div>
+		  <div class="col-sm-10">
+			<h4><strong>Vedant Mehra</strong> </h4>
+			<p>Sophomore student of National Institute Of Technology,Karnataka</p> 
+			<br>
+		  </div>
+		</div>
+              <br>
+			</div>
+			
+          </div>
+        </div>
+	  </div>
+	</body>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Contact Us</p>
+  <p>mananpoddarm@gmail.com</p>
+  <p>17shashank17@gmail.com</p>
+  <p>vmehra25@yahoo.com</p>
+</footer>
+
+
+</html>
